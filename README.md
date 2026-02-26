@@ -1,7 +1,5 @@
 # MOBILE-N1-JOGA-DA-VELHA
 
-------
-
 import 'dart:io';
 
 void main() {
