@@ -1,5 +1,4 @@
-# MOBILE-N1-JOGA-DA-VELHA
-
+`
 import 'dart:io';
 
 void main() {
@@ -13,13 +12,13 @@ void main() {
   bool gameFinished = false;
 
   while (!gameOver) {
-    
+      
     // TODO 1:
     // Verificar se a posição escolhida é válida e está vazia.
     // Se não for válida, mostrar mensagem e continuar o loop.
+
     // TODO 2:
     // Registrar a jogada no tabuleiro.
-    
     do{
         clearScreen();
         drawBoard(board);
@@ -39,7 +38,9 @@ void main() {
     }while(!gameFinished);
     
     gameFinished = false;
-    
+
+
+
     // TODO 3:
     // Verificar se o jogador atual venceu.
     // Se venceu, exibir mensagem e encerrar o jogo.
@@ -51,8 +52,6 @@ void main() {
     // TODO 5:
     // Alternar o jogador (X <-> O)
     currentPlayer == "X" ? currentPlayer = "O" : currentPlayer = "X";
-    
-    
   }
 
   clearScreen();
@@ -88,3 +87,4 @@ bool checkDraw(List<List<String>> board) {
   // Retornar true se todas as posições estiverem preenchidas.
   return false;
 }
+`
