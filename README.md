@@ -1,4 +1,5 @@
-`
+``` Dart
+
 import 'dart:io';
 
 void main() {
@@ -87,4 +88,4 @@ bool checkDraw(List<List<String>> board) {
   // Retornar true se todas as posições estiverem preenchidas.
   return false;
 }
-`
+```
