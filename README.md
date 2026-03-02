@@ -1,6 +1,3 @@
-<pre>
-  Dart
-</pre>
 ```
 import 'dart:io';
 
