@@ -1,5 +1,7 @@
 <pre>
-```Dart
+  Dart
+</pre>
+```
 import 'dart:io';
 
 void main() {
@@ -89,4 +91,3 @@ bool checkDraw(List<List<String>> board) {
   return false;
 }
 ```
-</pre>
