@@ -1,4 +1,4 @@
-```
+```Dart
 import 'dart:io';
 
 void main() {
