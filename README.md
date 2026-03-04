@@ -42,20 +42,28 @@ void main() {
     }while(!gameFinished);
     
     gameFinished = false;
-
-
-
+    
     // TODO 3:
     // Verificar se o jogador atual venceu.
     // Se venceu, exibir mensagem e encerrar o jogo.
-
     // TODO 4:
     // Verificar se houve empate.
     // Se empate, exibir mensagem e encerrar o jogo.
-
     // TODO 5:
     // Alternar o jogador (X <-> O)
-    currentPlayer == "X" ? currentPlayer = "O" : currentPlayer = "X";
+    
+    if(checkWinner(board, currentPlayer)){
+        gameOver = true;
+        print('Parabéns! O jogador $currentPlayer venceu!');
+    }else if(checkDraw(board)){
+        gameOver = true;
+        print('Deu velha! Os jogador X e O empataram!');
+    }else{
+       gameOver = false;
+       currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+    }
+
+
   }
 
   clearScreen();
@@ -82,6 +90,28 @@ bool checkWinner(List<List<String>> board, String player) {
   // - 3 linhas
   // - 3 colunas
   // - 2 diagonais
+  
+  final combination = [
+      [0,1,2],[3,4,5],[6,7,8],  // linhas
+      [0,3,6],[1,4,7],[2,5,8], // colunas
+      [0,4,8],[2,4,6]         // Diagonais
+    ];
+    
+    for (var comb in combination){
+        bool isWinner = true;
+        
+        for (var index in comb){
+            int row = index ~/ 3;
+            int coll = index % 3;
+            
+            if(board[row][coll] != player){
+                isWinner = false;
+                break;
+            }
+        }
+        if(isWinner) return true;
+        
+    }
 
   return false;
 }
@@ -89,6 +119,6 @@ bool checkWinner(List<List<String>> board, String player) {
 bool checkDraw(List<List<String>> board) {
   // TODO 7:
   // Retornar true se todas as posições estiverem preenchidas.
-  return false;
+  return board.every((row)=> row.every((campo) => campo != ' '));
 }
 ```
